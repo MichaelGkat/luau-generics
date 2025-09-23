@@ -48,4 +48,21 @@ function Array.Unique<T>(array: {T}, includeNaN: boolean?): {T}
 	return unique
 end
 
+function Array.Any<T>(array: {T}, requirement: (T) -> boolean): boolean
+	
+	for _, object in array do
+		
+		if not requirement(object) then continue end
+		
+		return true
+		
+	end
+	
+	return false
+	
+end
+
+
+
+
 return Array 
