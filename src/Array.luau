@@ -73,4 +73,15 @@ function Array.All<T>(array: {T}, requirement: (T) -> boolean): boolean
     
 end
 
+function Array.Reverse<T>(array: {T}): {T}
+	local reversed: {T} = {}
+	
+	for i = #array, 1, -1 do
+		table.insert(reversed, array[i])
+	end
+	
+	return reversed
+	
+end
+
 return Array 
