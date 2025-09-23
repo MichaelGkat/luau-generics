@@ -62,7 +62,15 @@ function Array.Any<T>(array: {T}, requirement: (T) -> boolean): boolean
 	
 end
 
+function Array.All<T>(array: {T}, requirement: (T) -> boolean): boolean
 
+	for _, object in array do
 
+		if not requirement(object) then return false end
+	end
+	
+	return true
+    
+end
 
 return Array 
