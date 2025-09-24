@@ -1,4 +1,7 @@
 --!strict
+
+type FindWithIndex<T> = {object: T, index: number}
+
 local Array = {}
 
 local function isNaN<T>(value: T): boolean
@@ -50,36 +53,8 @@ function Array.FindWithIndex<T>(array: {T}, requirement: (T) -> boolean): FindWi
 	
 end
 
-function Array.Count<T>(array: {T}, requirement: (T) -> boolean): number
-	
-	local count = 0
-	
-	for _, object in array do
+function Array.Map<T, U>(array: {T}, transform: (T) -> U): {U}
 
-		if requirement(object) then count += 1 end
-		
-	end
-	
-	return count
-	
-end
-
-function Array.Count<T>(array: {T}, value: T): number
-	
-	local count = 0
-	
-	for _, object in array do
-
-		if object == value then count += 1 end
-
-	end
-	
-	return count
-	
-end
-
-function Array.Map<T>(array: {T}, transform: (T) -> U): {U}
-	
 	local mapped: {U} = {}
 
 	for _, object in array do
@@ -90,12 +65,36 @@ function Array.Map<T>(array: {T}, transform: (T) -> U): {U}
 
 end
 
+function Array.Contains<T>(array: {T}, value: T): boolean
+	
+	for _, object in array do
+		
+		if object == value then return true end
+		
+	end
+	
+	return false
+	
+end
+
+function Array.Count<T>(array: {T}, requirement: (T) -> boolean): number
+	
+	local count = 0
+	
+	for _, object in array do
+		if requirement(object) then count += 1 end
+	end
+	
+	return count
+	
+end
+
 function Array.Unique<T>(array: {T}, includeNaN: boolean?): {T}
 	includeNaN = includeNaN or false
 
 	local unique: {T} = {}
 	local used: {[T]: boolean} = {}
-	local usedNaN = false
+	local usedNaN: boolean = false
 
 	for _, object in array do
 		if isNaN(object) then
@@ -134,22 +133,23 @@ function Array.Any<T>(array: {T}, requirement: (T) -> boolean): boolean
 end
 
 function Array.All<T>(array: {T}, requirement: (T) -> boolean): boolean
-
+	
 	for _, object in array do
 
 		if not requirement(object) then return false end
-
 	end
 	
 	return true
-    
+	
 end
 
 function Array.Reverse<T>(array: {T}): {T}
 	local reversed: {T} = {}
 	
 	for i = #array, 1, -1 do
+
 		table.insert(reversed, array[i])
+
 	end
 	
 	return reversed
@@ -161,7 +161,9 @@ function Array.Combine<T, U>(array: {T}, method: (U, T) -> U, startingValue: U):
 	local value = startingValue
 	
 	for _, object in array do
+
 		value = method(value, object)
+
 	end
 	
 	return value
