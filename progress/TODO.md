@@ -3,9 +3,9 @@
 ## Modules
 
 ### Array
-- [ ] Code complete
-- [ ] Docs complete
+- [ ] Code
+- [ ] Docs
 
 ### Random
-- [ ] Code complete
-- [ ] Docs complete
+- [ ] Code
+- [ ] Docs
