@@ -19,6 +19,20 @@ function Array.Filter<T>(array: {T}, requirement: (T) -> boolean): {T}
 
 end
 
+function Array.FindValue<T>(array: {T}, requirement: (T) -> boolean): T?
+	
+	for _, object in array do
+
+		if not requirement(object) then continue end
+
+		return object
+
+	end
+
+	return nil
+	
+end
+
 function Array.Map<T>(array: {T}, transform: (T) -> U): {U}
 	
 	local mapped: {U} = {}
