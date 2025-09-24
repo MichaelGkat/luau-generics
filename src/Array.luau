@@ -1,6 +1,7 @@
 --!strict
 
 type FindWithIndex<T> = {object: T, index: number}
+type NestedArray<T> = T | {NestedArray<T>}
 
 local Array = {}
 
@@ -241,6 +242,33 @@ function Array.Flatten2D<T>(nestedArray: {{T}}): {T}
 		end
 		
 	end
+	
+	return flattened
+	
+end
+
+function Array.FlattenND<T>(nestedArray: NestedArray<T>): {T}
+	
+	local flattened: {T} = {}
+	
+	local function recursiveFlatten(object: NestedArray<T>)
+		
+		if typeof(object) == "table" then
+			
+			for _, subObject in object do
+				
+				recursiveFlatten(subObject)
+			end
+		
+		else
+			
+			table.insert(flattened, object)
+			
+		end
+		
+	end
+	
+	recursiveFlatten(nestedArray)
 	
 	return flattened
 	
