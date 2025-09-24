@@ -79,6 +79,7 @@ function Array.All<T>(array: {T}, requirement: (T) -> boolean): boolean
 	for _, object in array do
 
 		if not requirement(object) then return false end
+
 	end
 	
 	return true
