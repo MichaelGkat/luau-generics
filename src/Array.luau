@@ -228,4 +228,22 @@ function Array.AlternatingJoin<T>(arrayOne: {T}, arrayTwo: {T}): {T}
 	
 end
 
+function Array.Flatten2D<T>(nestedArray: {{T}}): {T}
+	
+	local flattened: {T} = {}
+	
+	for _, array in nestedArray do
+		
+		for _, object in array do
+			
+			table.insert(flattened, object)
+			
+		end
+		
+	end
+	
+	return flattened
+	
+end
+
 return Array 
