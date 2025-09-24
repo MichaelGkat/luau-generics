@@ -50,6 +50,18 @@ function Array.FindWithIndex<T>(array: {T}, requirement: (T) -> boolean): FindWi
 	
 end
 
+function Array.Contains<T>(array: {T}, value: T): boolean
+	
+	for _, object in array do
+		
+		if object == value then return true end
+		
+	end
+	
+	return false
+	
+end
+
 function Array.Map<T>(array: {T}, transform: (T) -> U): {U}
 	
 	local mapped: {U} = {}
