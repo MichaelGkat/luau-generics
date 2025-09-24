@@ -170,4 +170,21 @@ function Array.Combine<T, U>(array: {T}, method: (U, T) -> U, startingValue: U):
 	
 end
 
+function Array.Slice<T>(array: {T}, startIndex: number, endIndex: number): {T}
+    if endIndex < startIndex then return {} end
+
+    local slice: {T} = {}
+
+    for i = math.max(1, startIndex), math.min(endIndex, #array) do
+
+        if not array[i] then continue end
+
+        table.insert(slice, array[i])
+
+    end
+
+    return slice
+
+end
+
 return Array 
