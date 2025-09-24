@@ -19,6 +19,18 @@ function Array.Filter<T>(array: {T}, requirement: (T) -> boolean): {T}
 
 end
 
+function Array.Map<T>(array: {T}, transform: (T) -> U): {U}
+	
+	local mapped: {U} = {}
+
+	for _, object in array do
+		table.insert(mapped, transform(object))
+	end
+
+	return mapped
+
+end
+
 function Array.Unique<T>(array: {T}, includeNaN: boolean?): {T}
 	includeNaN = includeNaN or false
 
