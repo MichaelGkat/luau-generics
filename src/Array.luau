@@ -287,4 +287,25 @@ function Array.FlattenND<T>(nestedArray: NestedArray<T>): {T}
 	
 end
 
+function Array.Chunk<T>(array: {T}, chunkSize: number): {{T}}
+	
+	local chunks: {{T}} = {}
+	
+	for i = 1, #array, chunkSize do
+		local chunk = {}
+		
+		for j = i, math.min(i + chunkSize - 1, #array) do
+			
+			table.insert(chunk, array[j])
+			
+		end
+		
+		table.insert(chunks, chunk)
+		
+	end
+	
+	return chunks
+	
+end
+
 return Array 
