@@ -187,4 +187,20 @@ function Array.Slice<T>(array: {T}, startIndex: number, endIndex: number): {T}
 
 end
 
+function Array.SimpleJoin<T>(arrayOne: {T}, arrayTwo: {T}): {T}
+	
+	local joined: {T} = {}
+	
+	for _, object in arrayOne do
+		table.insert(joined, object)
+	end
+	
+	for _, object in arrayTwo do
+		table.insert(joined, object)
+	end
+	
+	return joined
+	
+end
+
 return Array 
