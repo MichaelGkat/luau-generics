@@ -50,15 +50,31 @@ function Array.FindWithIndex<T>(array: {T}, requirement: (T) -> boolean): FindWi
 	
 end
 
-function Array.Contains<T>(array: {T}, value: T): boolean
+function Array.Count<T>(array: {T}, requirement: (T) -> boolean): number
+	
+	local count = 0
 	
 	for _, object in array do
-		
-		if object == value then return true end
+
+		if requirement(object) then count += 1 end
 		
 	end
 	
-	return false
+	return count
+	
+end
+
+function Array.Count<T>(array: {T}, value: T): number
+	
+	local count = 0
+	
+	for _, object in array do
+
+		if object == value then count += 1 end
+
+	end
+	
+	return count
 	
 end
 
