@@ -200,7 +200,8 @@ function Array.Slice<T>(array: {T}, startIndex: number, endIndex: number): {T}
 end
 
 function Array.SimpleJoin<T>(arrayOne: {T}, arrayTwo: {T}): {T}
-	
+	if #arrayOne == 0 and #arrayTwo == 0 then return {} end
+
 	local joined: {T} = {}
 	
 	for _, object in arrayOne do
@@ -216,7 +217,8 @@ function Array.SimpleJoin<T>(arrayOne: {T}, arrayTwo: {T}): {T}
 end
 
 function Array.AlternatingJoin<T>(arrayOne: {T}, arrayTwo: {T}): {T}
-	
+	if #arrayOne == 0 and #arrayTwo == 0 then return {} end
+
 	local joined: {T} = {}
 	
 	local lengthOne = #arrayOne
