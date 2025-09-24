@@ -84,4 +84,16 @@ function Array.Reverse<T>(array: {T}): {T}
 	
 end
 
+function Array.Combine<T, U>(array: {T}, method: (U, T) -> U, startingValue: U): U
+	
+	local value = startingValue
+	
+	for i = 2, #array do
+		value = method(value, array[i])
+	end
+	
+	return value
+	
+end
+
 return Array 
