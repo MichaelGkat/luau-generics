@@ -203,4 +203,29 @@ function Array.SimpleJoin<T>(arrayOne: {T}, arrayTwo: {T}): {T}
 	
 end
 
+function Array.AlternatingJoin<T>(arrayOne: {T}, arrayTwo: {T}): {T}
+	
+	local joined: {T} = {}
+	
+	local lengthOne = #arrayOne
+	local lengthTwo = #arrayTwo
+	
+	local numberLoops = math.max(lengthOne, lengthTwo)
+	
+	for i = 1, numberLoops do
+		
+		if i <= lengthOne then
+			table.insert(joined, arrayOne[i])
+		end
+		
+		if i <= lengthTwo then
+			table.insert(joined, arrayTwo[i])
+		end
+		
+	end
+	
+	return joined
+	
+end
+
 return Array 
