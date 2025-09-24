@@ -132,8 +132,8 @@ function Array.Combine<T, U>(array: {T}, method: (U, T) -> U, startingValue: U):
 	
 	local value = startingValue
 	
-	for i = 2, #array do
-		value = method(value, array[i])
+	for _, object in array do
+		value = method(value, object)
 	end
 	
 	return value
