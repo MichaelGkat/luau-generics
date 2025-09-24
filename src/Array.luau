@@ -33,6 +33,23 @@ function Array.FindValue<T>(array: {T}, requirement: (T) -> boolean): T?
 	
 end
 
+function Array.FindWithIndex<T>(array: {T}, requirement: (T) -> boolean): FindWithIndex<T>?
+	
+	for index, object in array do
+		
+		if not requirement(object) then continue end
+		
+		return {
+			object = object,
+			index = index
+		}
+		
+	end
+	
+	return nil
+	
+end
+
 function Array.Map<T>(array: {T}, transform: (T) -> U): {U}
 	
 	local mapped: {U} = {}
