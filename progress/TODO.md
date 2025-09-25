@@ -3,7 +3,7 @@
 ## Modules
 
 ### Array
-- [ ] Code
+- [x] Code
 - [ ] Docs
 
 ### Chance
