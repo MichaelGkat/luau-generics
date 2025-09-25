@@ -54,4 +54,8 @@ function Chance.ShuffleDerangement<T>(array: {T}): {T}
 	
 end
 
+function Chance.Boolean(probability: number): boolean
+	return (math.random() < probability)
+end
+
 return Chance
