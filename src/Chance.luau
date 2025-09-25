@@ -15,6 +15,13 @@ function Chance.Pick<T>(options: {T}): T?
 	return options[math.random(#options)]
 end
 
+function Chance.PickWeighted<T>(options: {T}, weights: {number}): T?
+	if #options == 0 then return nil end
+	
+	return nil
+	
+end
+
 function Chance.Shuffle<T>(array: {T}): {T}
 	
 	if #array <= 1 then return array end
