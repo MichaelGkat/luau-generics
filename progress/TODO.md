@@ -6,6 +6,6 @@
 - [ ] Code
 - [ ] Docs
 
-### Random
+### Chance
 - [ ] Code
 - [ ] Docs
