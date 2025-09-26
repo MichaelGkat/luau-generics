@@ -110,4 +110,19 @@ function Chance.Vector3(min: number, max: number): Vector3
 	
 end
 
+function Chance.CFrame(min: number, max: number, minRotation: number, maxRotation: number): CFrame
+	if max < min or maxRotation < minRotation then return CFrame.new(Vector3.one) end
+	
+	local vector3 = Chance.Vector3(min, max)
+	
+	return CFrame.new(vector3) * CFrame.Angles(
+		
+		math.random(minRotation, maxRotation),
+		math.random(minRotation, maxRotation),
+		math.random(minRotation, maxRotation)
+		
+	)
+	
+end
+
 return Chance
