@@ -16,10 +16,29 @@ function Chance.Pick<T>(options: {T}): T?
 end
 
 function Chance.PickWeighted<T>(options: {T}, weights: {number}): T?
-	if #options == 0 then return nil end
+	if #options == 0 or #weights == 0 or #options ~= #weights then return nil end
 	
-	return nil
+	local totalWeight = Array.Combine(weights, function(weightSum: number, weight: number)
+		return weightSum + math.max(0, weight) 
+	end, 0)
 	
+	if totalWeight <= 0 then return nil end
+	
+	local randomValue = math.random() * totalWeight
+	
+	local loopWeight = 0
+	
+	for idx, weight in weights do
+		loopWeight += math.max(0, weight)
+		
+		if randomValue > loopWeight then continue end
+		
+		return options[idx]
+		
+	end
+
+	return options[#options]
+
 end
 
 function Chance.Shuffle<T>(array: {T}): {T}
