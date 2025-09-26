@@ -84,4 +84,8 @@ function Chance.Boolean(probability: number): boolean
 	return (math.random() < probability)
 end
 
+function Chance.Color3(): Color3
+	return Color3.new(math.random(), math.random(), math.random())
+end
+
 return Chance
