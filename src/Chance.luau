@@ -88,4 +88,14 @@ function Chance.Color3(): Color3
 	return Color3.new(math.random(), math.random(), math.random())
 end
 
+function Chance.Vector2(min: number, max: number): Vector2
+	if max < min then return Vector2.one end
+	
+	return Vector2.new(
+		math.random(min, max),
+		math.random(min, max)
+	)
+	
+end
+
 return Chance
