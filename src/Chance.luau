@@ -98,4 +98,16 @@ function Chance.Vector2(min: number, max: number): Vector2
 	
 end
 
+function Chance.Vector3(min: number, max: number): Vector3
+	
+	if max < min then return Vector3.one end
+	
+	return Vector3.new(
+		math.random(min, max),
+		math.random(min, max),
+		math.random(min, max)
+	)
+	
+end
+
 return Chance
