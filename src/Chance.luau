@@ -73,7 +73,7 @@ function Chance.ShuffleDerangement<T>(array: {T}): {T}
             local j = math.random(1, i)
 
             shuffled[i], shuffled[j] = shuffled[j], shuffled[i]
-			
+
         end
 		
 	until isDerangement(array, shuffled)
@@ -123,9 +123,9 @@ function Chance.CFrame(min: number, max: number, minRotation: number, maxRotatio
 	
 	return CFrame.new(vector3) * CFrame.Angles(
 		
-		math.random(minRotation, maxRotation),
-		math.random(minRotation, maxRotation),
-		math.random(minRotation, maxRotation)
+		Chance.Range(minRotation, maxRotation),
+		Chance.Range(minRotation, maxRotation),
+		Chance.Range(minRotation, maxRotation)
 		
 	)
 	
