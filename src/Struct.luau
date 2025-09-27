@@ -13,4 +13,16 @@ function Struct.GetKeys<K, V>(dict: {[K]: V}): {K}
 
 end
 
+function Struct.GetValues<K, V>(dict: {[K]: V}): {V}
+	
+	local values: {V} = {}
+	
+	for _, value in dict do
+		table.insert(values, value)
+	end
+	
+	return values
+	
+end
+
 return Struct
