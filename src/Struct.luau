@@ -38,4 +38,20 @@ function Struct.DeepCopy<T>(struct: T): T
 		
 end
 
+function Struct.Pick<K, V>(struct: {[K]: V}, keys: {K}): {[K]: V}
+	if type(struct) ~= "table" then return struct end
+	
+	local picked: {[K]: V} = {}
+	
+	for _, key in keys do
+		if struct[key] == nil then continue end
+		
+		picked[key] = struct[key]
+		
+	end
+	
+	return picked
+
+end
+
 return Struct
