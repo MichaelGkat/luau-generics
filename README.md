@@ -23,10 +23,17 @@ luau-generics/
 ```
 
 
-## Getting Started
+## 🚀 Getting Started
 
-# 1. Require any module from src
+### 1. Check the [`docs/`](docs/) folder  
+
+Includes:
+- Descriptions for each module
+- Parameters and return types
+- Example use cases
+
+### 2. Require any module from `src`
+
 ```lua
 local Array = require(src.Array)
-
 ```
