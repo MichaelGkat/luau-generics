@@ -25,4 +25,17 @@ function Struct.GetValues<K, V>(dict: {[K]: V}): {V}
 	
 end
 
+function Struct.DeepCopy<T>(struct: T): T
+	if type(struct) ~= "table" then return struct end
+	
+	local deepCopy: {T} = {}
+	
+	for key, value in struct do
+		deepCopy[Struct.DeepCopy(key)] = Struct.DeepCopy(value)
+	end
+	
+	return deepCopy
+		
+end
+
 return Struct
