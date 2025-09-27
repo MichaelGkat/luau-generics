@@ -1,7 +1,5 @@
 # TODO
 
-## Modules
-
 ### Array
 - [x] Code
 - [ ] Docs
