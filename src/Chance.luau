@@ -1,12 +1,15 @@
 --!strict
 
+local Array = require(script.Parent.Array)
+
 local Chance = {}
 
 local function isDerangement<T>(original: {T}, shuffled: {T}): boolean
-	
+	if #original ~= #shuffled then return false end
+
 	for i = 1, #original do if original[i] == shuffled[i] then return false end end
 	return true
-	
+
 end
 
 function Chance.Pick<T>(options: {T}): T?
