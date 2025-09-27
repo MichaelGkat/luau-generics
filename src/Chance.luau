@@ -42,18 +42,20 @@ function Chance.PickWeighted<T>(options: {T}, weights: {number}): T?
 end
 
 function Chance.Shuffle<T>(array: {T}): {T}
-	
-	if #array <= 1 then return array end
-	
-	local shuffled = table.clone(array)
-	
-	for i = 1, #shuffled - 1 do
-		local j = math.random(i, #shuffled)
-		shuffled[i], shuffled[j] = shuffled[j], shuffled[i]
-	end
-	
-	return shuffled
-	
+
+    if #array <= 1 then return array end
+
+    local shuffled = table.clone(array)
+    
+    for i = #shuffled, 2, -1 do
+
+        local j = math.random(1, i)
+
+        shuffled[i], shuffled[j] = shuffled[j], shuffled[i]
+
+    end
+    
+    return shuffled
 end
 
 function Chance.ShuffleDerangement<T>(array: {T}): {T}
@@ -64,15 +66,15 @@ function Chance.ShuffleDerangement<T>(array: {T}): {T}
 	
 	repeat
 		
-		shuffled = table.clone(array)
-		
-		for i = 1, #shuffled - 1 do
+       shuffled = table.clone(array)
+        
+        for i = #shuffled, 2, -1 do
+
+            local j = math.random(1, i)
+
+            shuffled[i], shuffled[j] = shuffled[j], shuffled[i]
 			
-			local j = math.random(i, #shuffled)
-			
-			shuffled[i], shuffled[j] = shuffled[j], shuffled[i]
-			
-		end
+        end
 		
 	until isDerangement(array, shuffled)
 
