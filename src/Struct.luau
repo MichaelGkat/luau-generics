@@ -54,4 +54,25 @@ function Struct.Pick<K, V>(struct: {[K]: V}, keys: {K}): {[K]: V}
 
 end
 
+function Struct.Omit<K, V>(struct: {[K]: V}, keys: {K}): {[K]: V}
+	if type(struct) ~= "table" then return struct end
+	
+	local omitted: {[K]: V} = {}
+	local omittedSet = {}
+	
+	for _, omittedKey in keys do
+		omittedSet[omittedKey] = true
+	end
+	
+	for key, value in struct do
+		if omittedSet[key] then continue end
+		
+		omitted[key] = value
+		
+	end
+	
+	return omitted
+	
+end
+
 return Struct
