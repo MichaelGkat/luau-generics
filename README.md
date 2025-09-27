@@ -7,17 +7,17 @@ A compilation of generic utility functions for common tasks in Luau.
 
 ## 📁 Project Structure
 
+``` text
 luau-generics/
 ├── docs/
 │   ├── Array.md
 │   ├── Chance.md
 │   └── Struct.md
-├── src/          
+├── src/
 │   ├── Array.luau
 │   ├── Chance.luau
 │   └── Struct.luau
-│
 ├── .gitignore
 ├── LICENSE
-└── README.md 
-
+└── README.md
+```
