@@ -21,3 +21,17 @@ luau-generics/
 ├── LICENSE
 └── README.md
 ```
+
+
+## Getting Started
+
+# 1. Require any module from src
+```lua
+    local Array = require(src.Array)
+    
+        |
+        |
+        |
+        ⌄
+
+```
