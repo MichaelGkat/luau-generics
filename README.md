@@ -46,7 +46,7 @@ local Array = require(src.Array)
 local Array = require(src.Array)
 local tb = {1, 2, 3, 4, 5}
 
-local tripled = Array.map(numbers, function(n)
+local tripled = Array.Map(numbers, function(n)
 	return n * 3
 end)
 
