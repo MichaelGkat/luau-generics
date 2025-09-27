@@ -34,6 +34,21 @@ Includes:
 
 ### 2. Require any module from `src`
 
+> ⚠️ Note: `'src'` may not be the correct path depending on your project setup
+
 ```lua
 local Array = require(src.Array)
+```
+
+### 3. Use the methods!
+
+```lua
+local Array = require(src.Array)
+local tb = {1, 2, 3, 4, 5}
+
+local tripled = Array.map(numbers, function(n)
+	return n * 3
+end)
+
+print(tripled) -- {3, 6, 9, 12, 15}
 ```
