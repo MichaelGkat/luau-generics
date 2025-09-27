@@ -1,0 +1,4 @@
+
+local Struct = {}
+
+return Struct
