@@ -80,6 +80,10 @@ function Chance.ShuffleDerangement<T>(array: {T}): {T}
 	
 end
 
+function Chance.Range(min: number, max: number): number
+    return math.random() * (max - min) + min
+end
+
 function Chance.Boolean(probability: number): boolean
 	return (math.random() < probability)
 end
