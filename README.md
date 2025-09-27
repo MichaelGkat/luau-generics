@@ -2,8 +2,8 @@
 
 A compilation of generic utility functions for common tasks in Luau.
 
-- See the [`docs/`](docs/) folder for detailed documentation on each module.
-- See the [`src/`](src/) folder for code implementations.
+- See [`docs/`](docs/) for detailed documentation on each module.
+- See [`src/`](src/) for code implementations.
 
 ## 📁 Project Structure
 
