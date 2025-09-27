@@ -109,9 +109,9 @@ function Chance.Vector3(min: number, max: number): Vector3
 	if max < min then return Vector3.one end
 	
 	return Vector3.new(
-		math.random(min, max),
-		math.random(min, max),
-		math.random(min, max)
+		Chance.Range(min, max),
+		Chance.Range(min, max),
+		Chance.Range(min, max)
 	)
 	
 end
