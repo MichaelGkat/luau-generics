@@ -27,11 +27,6 @@ luau-generics/
 
 # 1. Require any module from src
 ```lua
-    local Array = require(src.Array)
-    
-        |
-        |
-        |
-        ⌄
+local Array = require(src.Array)
 
 ```

@@ -33,7 +33,7 @@ function Struct.DeepCopy<T>(struct: Deep<T>): Deep<T>
 		return struct
 	end
 
-	local deepCopy: { [any]: Deep<T> } = {}
+	local deepCopy: Deep<T> = {}
 
 	for key, value in struct do
 		deepCopy[Struct.DeepCopy(key)] = Struct.DeepCopy(value)
