@@ -1,3 +1,6 @@
+--!strict
+
+type Deep<T> = T | { [any]: Deep<T> }
 
 local Struct = {}
 
@@ -25,18 +28,20 @@ function Struct.GetValues<K, V>(dict: {[K]: V}): {V}
 	
 end
 
-function Struct.DeepCopy<T>(struct: T): T
-	if type(struct) ~= "table" then return struct end
-	
-	local deepCopy: {T} = {}
-	
+function Struct.DeepCopy<T>(struct: Deep<T>): Deep<T>
+	if type(struct) ~= "table" then
+		return struct
+	end
+
+	local deepCopy: { [any]: Deep<T> } = {}
+
 	for key, value in struct do
 		deepCopy[Struct.DeepCopy(key)] = Struct.DeepCopy(value)
 	end
-	
+
 	return deepCopy
-		
 end
+
 
 function Struct.Pick<K, V>(struct: {[K]: V}, keys: {K}): {[K]: V}
 	if type(struct) ~= "table" then return struct end
@@ -58,7 +63,7 @@ function Struct.Omit<K, V>(struct: {[K]: V}, keys: {K}): {[K]: V}
 	if type(struct) ~= "table" then return struct end
 	
 	local omitted: {[K]: V} = {}
-	local omittedSet = {}
+	local omittedSet: {[K]: boolean} = {}
 	
 	for _, omittedKey in keys do
 		omittedSet[omittedKey] = true
