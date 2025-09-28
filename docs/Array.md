@@ -58,12 +58,19 @@ Array.Filter<T>(array: {T}, requirement: (T) -> boolean): {T}
 ```
 
 **Parameters:**
-
+- `array: {T}` - Array to filter
+- `requirement: (T) -> boolean` - Predicate that returns true for values to keep
 
 **Returns:**
+- `{T}` - Filtered array with elements that met the requirement
 
 **Example:**
 ``` lua
+local function hasSpace(str: string)
+	return string.find(str, "%s") ~= nil
+end
 
+local strings = {"abc", "hello", "One Space", "Two Spaces Here", "ZeroSpaces"}
+print(Array.Filter(strings, hasSpace)) -- {"One Space", "Two Spaces Here"}
 ```
 
