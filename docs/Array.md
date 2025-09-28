@@ -257,7 +257,7 @@ Array.Combine<T, U>(array: {T}, method: (U, T) -> U, startingValue: U): U
 
 **Parameters:**
 - `array: {T}` - Array to combine
-- `method: {U, T} -> U` - Function to combine elements
+- `method: (U, T) -> U` - Function to combine elements
 - `startingValue: U` - Initial value for the method
 
 **Returns:**
