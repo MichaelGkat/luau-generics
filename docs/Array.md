@@ -312,3 +312,21 @@ local numbers = {1, 2, 3}
 local joined = Array.AlternatingJoin(letters, numbers)
 print(joined) -- {"a", 1, "b", 2, "c", 3}
 ```
+
+## Array.Flatten2D
+```lua
+Array.Flatten2D<T>(nestedArray: {{T}}): {T}
+```
+
+**Parameters:**
+- `nestedArray: {{T}}` - a 2D array
+
+**Returns:**
+- `{T}` - A flattened 1D array
+
+**Example:**
+``` lua
+local Matrix = {{1, 2}, {3, 4}, {5, 6}}
+local flattened = Array.Flatten2D(Matrix)
+print(flattened) -- {1, 2, 3, 4, 5, 6}
+```
