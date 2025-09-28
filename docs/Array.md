@@ -206,8 +206,8 @@ local function DivisibleByThree(num: number)
 	return num % 3 == 0
 end
 local numbers = {3, 6, 9, 12}
-local allEven = Array.All(numbers, DivisibleByThree)
-print(allEven) -- true
+local allDivisibleByThree = Array.All(numbers, DivisibleByThree)
+print(allDivisibleByThree) -- true
 ```
 
 ## Array.ReverseCopy
