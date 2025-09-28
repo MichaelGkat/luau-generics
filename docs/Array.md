@@ -250,3 +250,26 @@ print(reversed) -- {4, 3, 2, 1}
 print(numbers) -- {4, 3, 2, 1} (original changed)
 ```
 
+## Array.Combine
+```lua
+Array.Combine<T, U>(array: {T}, method: (U, T) -> U, startingValue: U): U
+```
+
+**Parameters:**
+- `array: {T}` - Array to combine
+- `method: {U, T} -> U` - Function to combine elements
+- `startingValue: U` - Initial value for the method
+
+**Returns:**
+- `U` - The final combined value
+
+**Example:**
+``` lua
+local function AddValue(summed: number, current: number)
+	return summed + current
+end
+local numbers = {1, 2, 3, 4, 5}
+local sum = Array.Combine(numbers, AddValue, 0)
+print(sum) -- 15
+```
+
