@@ -165,5 +165,27 @@ print(bigNumber.object) -- 200
 print(bigNumber.index) -- 2
 ```
 
+## Array.Any
+```lua
+Array.Any<T>(array: {T}, requirement: (T) -> boolean): boolean
+```
+
+**Parameters:**
+- `array: {T}` - Array to search
+- `requirement: (T) -> boolean` - Predicate to find elements
+
+**Returns:**
+- `boolean` - true if any element meets the requirement, false otherwise
+
+**Example:**
+``` lua
+local function isNumber(object: any)
+	return type(object) == "number" and object == object
+end
+
+local array = {"hi", "not a number", "totally a number", 23}
+local arrayHasNumber = Array.Any(array, isNumber)
+print(arrayHasNumber) -- true
+```
 
 
