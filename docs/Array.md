@@ -188,4 +188,27 @@ local arrayHasNumber = Array.Any(array, isNumber)
 print(arrayHasNumber) -- true
 ```
 
+## Array.All
+```lua
+Array.All<T>(array: {T}, requirement: (T) -> boolean): boolean
+```
+
+**Parameters:**
+- `array: {T}` - Array to search
+- `requirement: (T) -> boolean` - Predicate to find elements
+
+**Returns:**
+- `boolean` - true if all element meets the requirement, false otherwise
+
+**Example:**
+``` lua
+local function DivisibleByThree(num: number)
+	return num % 3 == 0
+end
+local numbers = {3, 6, 9, 12}
+local allEven = Array.All(numbers, DivisibleByThree)
+print(allEven) -- true
+```
+
+
 
