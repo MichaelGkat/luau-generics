@@ -5,7 +5,7 @@ A compilation of generic utility functions for common tasks in Luau.
 - See [`docs/`](docs/) for detailed documentation on each module.
 - See [`src/`](src/) for code implementations.
 
-## 📁 Project Structure
+## Project Structure
 
 ``` text
 luau-generics/
@@ -23,7 +23,7 @@ luau-generics/
 ```
 
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Check the [`docs/`](docs/) folder  
 
