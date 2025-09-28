@@ -71,7 +71,8 @@ local function hasSpace(str: string)
 end
 
 local strings = {"abc", "hello", "One Space", "Two Spaces Here", "ZeroSpaces"}
-print(Array.Filter(strings, hasSpace)) -- {"One Space", "Two Spaces Here"}
+local filteredStrings = Array.Filter(strings, hasSpace)
+print(filteredStrings) -- {"One Space", "Two Spaces Here"}
 ```
 
 ## Array.Map
