@@ -330,3 +330,21 @@ local Matrix = {{1, 2}, {3, 4}, {5, 6}}
 local flattened = Array.Flatten2D(Matrix)
 print(flattened) -- {1, 2, 3, 4, 5, 6}
 ```
+
+## Array.FlattenND
+```lua
+Array.FlattenND<T>(nestedArray: NestedArray<T>): {T}
+```
+
+**Parameters:**
+- `nestedArray: NestedArray<T>` - a nested array of any depth
+
+**Returns:**
+- `{T}` - A completely flattened 1D array
+
+**Example:**
+``` lua
+local nested = {1, 2, 3, {4, 5, 6, {7, 8, 9, {10, 11, 12}}}}
+local flattened = Array.FlattenND(nested)
+print(flattened) -- {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+```
