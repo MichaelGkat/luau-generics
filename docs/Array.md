@@ -348,3 +348,23 @@ local nested = {1, 2, 3, {4, 5, 6, {7, 8, 9, {10, 11, 12}}}}
 local flattened = Array.FlattenND(nested)
 print(flattened) -- {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
 ```
+
+## Array.Slice
+```lua
+Array.Slice<T>(array: {T}, startIndex: number, endIndex: number): {T}
+```
+
+**Parameters:**
+- `array: {T}` - Array to slice
+- `startIndex: number` - Starting index (inclusive)
+- `endIndex: number` - Ending index (inclusive)
+
+**Returns:**
+- `{T}` - Slice array containg elements from [startIndex, endIndex]
+
+**Example:**
+``` lua
+local array = {1, 2, 3, 4, 5, 6, 7, 8}
+local sliced = Array.Slice(array, 2, 5)
+print(sliced) -- {2, 3, 4, 5}
+```
