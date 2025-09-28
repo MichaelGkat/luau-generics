@@ -44,10 +44,26 @@ Array.Count<T>(array: {T}, requirement: (T) -> boolean): number
 ``` lua
 
 local function isEven(num: number)
-	return num % 2 ~= 0
+	return num % 2 == 0
 end
 
 local numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
 local numberEven = Array.Count(numbers, isEven)
 print(numberEven) -- 5
 ```
+
+## Array.Filter
+```lua
+Array.Filter<T>(array: {T}, requirement: (T) -> boolean): {T}
+```
+
+**Parameters:**
+
+
+**Returns:**
+
+**Example:**
+``` lua
+
+```
+
