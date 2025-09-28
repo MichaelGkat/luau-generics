@@ -368,3 +368,22 @@ local array = {1, 2, 3, 4, 5, 6, 7, 8}
 local sliced = Array.Slice(array, 2, 5)
 print(sliced) -- {2, 3, 4, 5}
 ```
+
+## Array.Chunk
+```lua
+Array.Chunk<T>(array: {T}, chunkSize: number): {{T}}
+```
+
+**Parameters:**
+- `array: {T}` - Array to split into chunks
+- `chunkSize: number` - Size of each chunk
+
+**Returns:**
+- `{{T}}` - Array of arrays, each of size chunkSize (except possibly the last element)
+
+**Example:**
+``` lua
+local array = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j"}
+local chunked = Array.Chunk(array, 3)
+print(chunked) -- {{"a", "b", "c"}, {"d", "e", "f"}, {"g", "h", "i"}, {"j"}}
+```
