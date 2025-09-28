@@ -1,12 +1,10 @@
-**Array**
+# Array
 
 Generic utility functions for arrays
 
 ```lua
 local Array = require(src.Array)
 ```
-
-# Array.Contains Method Documentation
 
 ## Array.Contains
 ```lua
