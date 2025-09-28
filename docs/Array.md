@@ -97,5 +97,24 @@ local tripled = Array.Map(numbers, triple)
 print(tripled) -- {6, 12, 18, 24, 30}
 ```
 
+## Array.Unique
+```lua
+Array.Unique<T>(array: {T}, includeNaN: boolean?): {T}
+```
+
+**Parameters:**
+- `array: {T}` - The array to remove duplicates from
+- `includeNan: boolean?` - Include NaN values (defaults to False)
+
+**Returns:**
+- `{T}` - A new array with unique elements only
+
+**Example:**
+``` lua
+local array = {Enum.KeyCode.P, Enum.KeyCode.P, "hello", 23, "this is unique", "not unique", "not unique"}
+local uniqueArray = Array.Unique(array, false)
+print(uniqueArray) -- {Enum.KeyCode.P, "hello", 23, "this is unique", "not unique"}
+```
+
 
 
