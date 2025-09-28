@@ -273,3 +273,25 @@ local sum = Array.Combine(numbers, AddValue, 0)
 print(sum) -- 15
 ```
 
+## Array.SimpleJoin
+```lua
+Array.SimpleJoin<T>(arrayOne: {T}, arrayTwo: {T}): {T}
+```
+
+**Parameters:**
+- `arrayOne: {T}` - First array
+- `arrayTwo: {T}` - Second array
+
+**Returns:**
+- `{T}` - Combined array, starts with all arrayOne elements followed by arrayTwo elements
+
+**Example:**
+``` lua
+local arrayOne = {1, 2, 3}
+local arrayTwo = {4, 5, 6}
+local joined = Array.SimpleJoin(arrayOne, arrayTwo)
+print(joined) -- {1, 2, 3, 4, 5, 6}
+```
+
+
+
