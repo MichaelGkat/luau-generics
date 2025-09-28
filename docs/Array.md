@@ -74,3 +74,28 @@ local strings = {"abc", "hello", "One Space", "Two Spaces Here", "ZeroSpaces"}
 print(Array.Filter(strings, hasSpace)) -- {"One Space", "Two Spaces Here"}
 ```
 
+## Array.Map
+```lua
+Array.Map<T, U>(array: {T}, transform: (T) -> U): {U}
+```
+
+**Parameters:**
+- `array: {T}` - Array to transform
+- `transform: (T) -> U` - Function that transforms each element
+
+**Returns:**
+- `{U}` - New array with transformed elements
+
+**Example:**
+``` lua
+local function triple(num: number)
+	return num * 3
+end
+
+local numbers = {2, 4, 6, 8, 10}
+local tripled = Array.Map(numbers, triple)
+print(tripled) -- {6, 12, 18, 24, 30}
+```
+
+
+
