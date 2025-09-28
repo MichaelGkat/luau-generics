@@ -124,7 +124,7 @@ Array.FindValue<T>(array: {T}, requirement: (T) -> boolean): T?
 
 **Parameters:**
 - `array: {T}` - Array to search
-- `requirement: (T) -> boolean` - Predicate to find specific value
+- `requirement: (T) -> boolean` - Predicate to find specific element
 
 **Returns:**
 - `T?` - The first element that meets the requirement, nil if no element can be found
@@ -138,6 +138,31 @@ end
 local names = {"Zack", "Mark", "Joe"}
 local zNames = Array.FindValue(names, BeginsWithZ)
 print(zNames) -- "Zack"
+```
+
+## Array.FindWithIndex
+```lua
+Array.FindWithIndex<T>(array: {T}, requirement: (T) -> boolean): FindWithIndex<T>?
+```
+
+**Parameters:**
+- `array: {T}` - Array to search
+- `requirement: (T) -> boolean` - Predicate to find specific element
+
+**Returns:**
+- `FindWithIndex<T>?` - A table containing {object: T, index: number} or nil if not found
+
+**Example:**
+``` lua
+local function GreaterThan100(num: number)
+	return num > 100
+end
+
+local numbers = {1, 200, 45, 20}
+local bigNumber = Array.FindWithIndex(numbers, GreaterThan100)
+print(bigNumber) -- {object = 200, index = 2}
+print(bigNumber.object) -- 200
+print(bigNumber.index) -- 2
 ```
 
 
