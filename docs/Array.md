@@ -283,7 +283,7 @@ Array.SimpleJoin<T>(arrayOne: {T}, arrayTwo: {T}): {T}
 - `arrayTwo: {T}` - Second array
 
 **Returns:**
-- `{T}` - Combined array, starts with all arrayOne elements followed by arrayTwo elements
+- `{T}` - Combined array starting with all arrayOne elements followed by arrayTwo elements
 
 **Example:**
 ``` lua
@@ -293,5 +293,22 @@ local joined = Array.SimpleJoin(arrayOne, arrayTwo)
 print(joined) -- {1, 2, 3, 4, 5, 6}
 ```
 
+## Array.AlternatingJoin
+```lua
+Array.AlternatingJoin<T>(arrayOne: {T}, arrayTwo: {T}): {T}
+```
 
+**Parameters:**
+- `arrayOne: {T}` - First array
+- `arrayTwo: {T}` - Second array
 
+**Returns:**
+- `{T}` - Combined array with elements alternating between the two arrays
+
+**Example:**
+``` lua
+local letters = {"a", "b", "c"}
+local numbers = {1, 2, 3}
+local joined = Array.AlternatingJoin(letters, numbers)
+print(joined) -- {"a", 1, "b", 2, "c", 3}
+```
