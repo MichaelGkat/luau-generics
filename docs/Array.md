@@ -360,7 +360,7 @@ Array.Slice<T>(array: {T}, startIndex: number, endIndex: number): {T}
 - `endIndex: number` - Ending index (inclusive)
 
 **Returns:**
-- `{T}` - Slice array containg elements from [startIndex, endIndex]
+- `{T}` - Slice array containing elements from [startIndex, endIndex]
 
 **Example:**
 ``` lua
