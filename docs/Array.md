@@ -210,5 +210,24 @@ local allEven = Array.All(numbers, DivisibleByThree)
 print(allEven) -- true
 ```
 
+## Array.ReverseCopy
+```lua
+Array.ReverseCopy<T>(array: {T}): {T}
+```
+
+**Parameters:**
+- `array: {T}` - Array to reverse
+
+**Returns:**
+- `{T}` - A new array with elements in reverse order
+
+**Example:**
+``` lua
+local numbers = {1, 2, 3, 4}
+local reversed = Array.ReverseCopy(numbers)
+
+print(reversed) -- {4, 3, 2, 1}
+print(numbers) -- {1, 2, 3, 4} (original unchanged)
+```
 
 
