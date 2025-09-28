@@ -230,4 +230,23 @@ print(reversed) -- {4, 3, 2, 1}
 print(numbers) -- {1, 2, 3, 4} (original unchanged)
 ```
 
+## Array.ReverseReplace
+```lua
+Array.ReverseReplace<T>(array: {T}): {T}
+```
+
+**Parameters:**
+- `array: {T}` - Array to reverse in-place
+
+**Returns:**
+- `{T}` - The same array with elements in reverse order
+
+**Example:**
+``` lua
+local numbers = {1, 2, 3, 4}
+local reversed = Array.ReverseReplace(numbers)
+
+print(reversed) -- {4, 3, 2, 1}
+print(numbers) -- {4, 3, 2, 1} (original changed)
+```
 
