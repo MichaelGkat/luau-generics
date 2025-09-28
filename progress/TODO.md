@@ -2,7 +2,7 @@
 
 ### Array
 - [x] Code
-- [ ] Docs
+- [x] Docs
 
 ### Chance
 - [x] Code
