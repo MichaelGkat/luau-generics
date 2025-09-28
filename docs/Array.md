@@ -117,5 +117,28 @@ local uniqueArray = Array.Unique(array, false)
 print(uniqueArray) -- {Enum.KeyCode.P, "hello", 23, "this is unique", "not unique"}
 ```
 
+## Array.FindValue
+```lua
+Array.FindValue<T>(array: {T}, requirement: (T) -> boolean): T?
+```
+
+**Parameters:**
+- `array: {T}` - Array to search
+- `requirement: (T) -> boolean` - Predicate to find specific value
+
+**Returns:**
+- `T?` - The first element that meets the requirement, nil if no element can be found
+
+**Example:**
+``` lua
+local function BeginsWithZ(str: string)
+	return string.sub(str, 1, 1) == "Z"
+end
+
+local names = {"Zack", "Mark", "Joe"}
+local zNames = Array.FindValue(names, BeginsWithZ)
+print(zNames) -- "Zack"
+```
+
 
 
