@@ -9,5 +9,5 @@
 - [ ] Docs
 
 ### Struct
-- [ ] Code
+- [x] Code
 - [ ] Docs
