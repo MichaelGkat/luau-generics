@@ -15,7 +15,7 @@ Chance.Pick<T>(options: {T}): T?
 - `options: {T}` - Array of possible values
 
 **Returns:** 
-- `T?` - Randomly selected value, provided options contains atleast one element
+- `T?` - Randomly selected value, provided options contains atleast one element.  Nil if not
 
 **Example:**
 ```lua
