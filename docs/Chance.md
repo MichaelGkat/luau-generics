@@ -78,7 +78,7 @@ Chance.ShuffleDerangement<T>(array: {T}): {T}
 **Parameters:**
 - `array: {T}` - Array to shuffle
 **Returns:** 
-- `{T}` - New shuffled array, guranteed to be a derangement
+- `{T}` - New shuffled array, guaranteed to be a derangement
 
 **Example:**
 ```lua
