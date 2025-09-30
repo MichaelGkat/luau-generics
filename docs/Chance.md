@@ -49,3 +49,25 @@ local randomFruit = Chance.PickWeighted(fruits, weights)
 print(randomFruit) -- apple (60%) or banana (30%) or pear (10%)
 
 ```
+
+## Chance.Shuffle
+```lua
+Chance.Shuffle<T>(array: {T}): {T}
+```
+
+**Parameters:**
+- `array: {T}` - Array to shuffle
+**Returns:** 
+- `{T}` - New shuffled array, does not gurantee it to be a derangement
+
+**Example:**
+```lua
+
+local array = {1, 2, 3}
+local shuffled = Chance.Shuffle(array)
+
+print(shuffled) -- {2, 3, 1}
+
+```
+
+
