@@ -70,4 +70,24 @@ print(shuffled) -- {2, 3, 1}
 
 ```
 
+## Chance.ShuffleDerangement
+```lua
+Chance.ShuffleDerangement<T>(array: {T}): {T}
+```
+
+**Parameters:**
+- `array: {T}` - Array to shuffle
+**Returns:** 
+- `{T}` - New shuffled array, guranteed to be a derangement
+
+**Example:**
+```lua
+
+local array = {1, 2, 3}
+local shuffled = Chance.ShuffleDerangement(array)
+
+print(shuffled) -- {3, 1, 2}
+
+```
+
 
