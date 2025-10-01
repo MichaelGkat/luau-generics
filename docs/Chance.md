@@ -170,17 +170,39 @@ Chance.Vector3(min: number, max: number): Vector3
 ```
 
 **Parameters:**
-- `min: number` - Minimum value for X and Y components
-- `max: number` - Maximum value for X and Y components
+- `min: number` - Minimum value for X, Y, and Z components
+- `max: number` - Maximum value for X, Y, and Z components
 **Returns:** 
 - `Vector3` - Random Vector3 with components between min and max, or Vector3.one if min > max
 
 **Example:**
 ```lua
 
-local randomVector3 = Chance.Vector2(1, 5)
+local randomVector3 = Chance.Vector3(1, 5)
 print(randomVector3) -- Random Vector3 with components between 1 and 5
 
 ```
+
+## Chance.CFrame
+```lua
+Chance.CFrame(min: number, max: number, minRotation: number, maxRotation: number): CFrame
+```
+
+**Parameters:**
+- `min: number` - Minimum value for position components
+- `max: number` - Maximum value for positions components
+- `minRotation: number` - Minimum rotation value in radians for each axis
+- `maxRotation: number` - Maximum rotation value in radians for each axis
+**Returns:** 
+- `CFrame` - Random CFrame with position and rotation. Returns CFrame.new(Vector3.one) if max < min or maxRotation < minRotation
+
+**Example:**
+```lua
+
+local randomCFrame = Chance.CFrame(0, 5, 0, math.pi / 2)
+print(randomCFrame) -- Random CFrame with random position and rotation
+
+```
+
 
 
