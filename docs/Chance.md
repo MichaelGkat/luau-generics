@@ -90,4 +90,23 @@ print(shuffled) -- {3, 1, 2}
 
 ```
 
+## Chance.Range
+```lua
+Chance.Range(min: number, max: number): number
+```
+
+**Parameters:**
+- `min: number` - Minimum value (inclusive)
+- `max: number` - Maximum value (inclusive)
+**Returns:** 
+- `number` - Random value between min and max
+
+**Example:**
+```lua
+
+local randomValue = Chance.Range(10, 20)
+print(randomValue) -- Some value between 10 and 20
+
+```
+
 
