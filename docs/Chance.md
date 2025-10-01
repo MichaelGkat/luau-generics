@@ -127,4 +127,22 @@ print(coinFlip) -- true | false with 50-50 odds
 
 ```
 
+## Chance.Color3
+```lua
+Chance.Color3(): Color3
+```
+
+**Parameters:**
+
+**Returns:** 
+- `Color3` - Random color with RGB values from 0 to 1
+
+**Example:**
+```lua
+
+local randomColor = Chance.Color3()
+print(randomColor) -- Random color
+
+```
+
 
