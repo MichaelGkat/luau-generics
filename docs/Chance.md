@@ -145,7 +145,6 @@ print(randomColor) -- Random color
 
 ```
 
-
 ## Chance.Vector2
 ```lua
 Chance.Vector2(min: number, max: number): Vector2
