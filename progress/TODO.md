@@ -6,7 +6,7 @@
 
 ### Chance
 - [x] Code
-- [ ] Docs
+- [x] Docs
 
 ### Struct
 - [x] Code
