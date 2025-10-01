@@ -146,3 +146,23 @@ print(randomColor) -- Random color
 ```
 
 
+## Chance.Vector2
+```lua
+Chance.Vector2(min: number, max: number): Vector2
+```
+
+**Parameters:**
+- `min: number` - Minimum value for X and Y components
+- `max: number` - Maximum value for X and Y components
+**Returns:** 
+- `Vector2` - Random Vector2 with components between min and max, or Vector2.one if min > max
+
+**Example:**
+```lua
+
+local randomVector2 = Chance.Vector2(5, 10)
+print(randomVector2) -- Random Vector 2 with components between 5 and 10
+
+```
+
+
