@@ -37,7 +37,7 @@ Chance.PickWeighted<T>(options: {T}, weights: {number}): T?
 - `weights: {number}` – Array of relative weights for each option to be selected. These weights do not need to add up to a specific value and are relative to the other weights.
 
 **Returns:** 
-- `T?` - Randomly selected value using relative weights
+- `T?` - Randomly selected value using relative weights.  Returns nil if options/weights are empty, mismatched in length, or total weight <= 0
 
 **Example:**
 ```lua
