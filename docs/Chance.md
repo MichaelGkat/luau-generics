@@ -109,4 +109,22 @@ print(randomValue) -- Some value between 10 and 20
 
 ```
 
+## Chance.Boolean
+```lua
+Chance.Boolean(probability: number): boolean
+```
+
+**Parameters:**
+- `probability: number` - Probability to return true (0.0 to 1.0)
+**Returns:** 
+- `boolean` - true or false based on probability
+
+**Example:**
+```lua
+
+local coinFlip = Chance.Boolean(0.5)
+print(coinFlip) -- true | false with 50-50 odds
+
+```
+
 
