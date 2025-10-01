@@ -160,7 +160,26 @@ Chance.Vector2(min: number, max: number): Vector2
 ```lua
 
 local randomVector2 = Chance.Vector2(5, 10)
-print(randomVector2) -- Random Vector 2 with components between 5 and 10
+print(randomVector2) -- Random Vector2 with components between 5 and 10
+
+```
+
+## Chance.Vector3
+```lua
+Chance.Vector3(min: number, max: number): Vector3
+```
+
+**Parameters:**
+- `min: number` - Minimum value for X and Y components
+- `max: number` - Maximum value for X and Y components
+**Returns:** 
+- `Vector3` - Random Vector3 with components between min and max, or Vector3.one if min > max
+
+**Example:**
+```lua
+
+local randomVector3 = Chance.Vector2(1, 5)
+print(randomVector3) -- Random Vector3 with components between 1 and 5
 
 ```
 
